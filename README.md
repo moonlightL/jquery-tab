@@ -8,7 +8,7 @@ jquery-tab 是一款列表页面标签 tab 插件。
 
 ### 2.1 引入资源文件
 
-```
+```html
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="js/waves-0.7.5/waves.min.css">
 <link rel="stylesheet" href="font/material-design-iconic-font/css/material-design-iconic-font.min.css">
@@ -23,7 +23,7 @@ jquery-tab 是一款列表页面标签 tab 插件。
 ### 2.2 页面布局
 总体上需要 2 部分：导航菜单和子窗口容器。
 
-```
+```html
 <div class="row">
   <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav" id="nav">
@@ -50,13 +50,13 @@ jquery-tab 是一款列表页面标签 tab 插件。
 
 ### 2.3 调用插件
 
-```
+```javascript
 <script>
     $(function() {
-      // 设置默认子窗口页面
       $("#tab-container").tab({
-        homeUrl: "home.html",
-        homeName: "菜单一"
+        homeUrl: "home.html", // 首页地址
+        homeName: "菜单一",  // tab 栏标题名
+        tabCallback: null          // 点击 tab 后的回调函数
       });
     });
 </script>
