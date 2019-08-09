@@ -62,6 +62,6 @@ tab-container 是子窗口容器 id 值。
 
 ## 三、效果图
 
-[](http://images.extlight.com/jquery-tab.gif)
+![](http://images.extlight.com/jquery-tab.gif)
 
 
