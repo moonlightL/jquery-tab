@@ -56,7 +56,9 @@ jquery-tab 是一款列表页面标签 tab 插件。
       $("#tab-container").tab({
         homeUrl: "home.html", // 首页地址
         homeName: "菜单一",  // tab 栏标题名
-        tabCallback: null          // 点击 tab 后的回调函数
+        tabCallback: function(tab) {  // 点击 tab 后的回调函数
+             console.log(tab);
+        }
       });
     });
 </script>
