@@ -25,7 +25,7 @@
     var arr = [];
     arr.push("<div class='tab-container-menu'>");
     arr.push("<ul id='tabs' class='tabs'>")
-    arr.push("<li class='tabs-item active' id='tab_"+index+"' data-close='false'><a href='javascript:;' class='waves-effect waves-light'>"+defaultSetting.homeName+"</a></li>");
+    arr.push("<li class='tabs-item active' id='tab_"+index+"' data-close='false' data-index='"+ index +"' data-url='"+defaultSetting.homeUrl+"'><a href='javascript:;' class='waves-effect waves-light'>"+defaultSetting.homeName+"</a></li>");
     arr.push("</div>");
     arr.push("<div class='tab-container-content' id='tab-container-content'>");
     arr.push("<div id='iframe_tab_"+index+"' class='iframe active'>");
@@ -45,7 +45,9 @@
         $(".tabs-item").removeClass("active");
         $(this).addClass("active");
         if (typeof defaultSetting.tabCallback == "function") {
-            defaultSetting.tabCallback(this);
+            var index = $(this).data("index");
+            var url = $(this).data("url");
+            defaultSetting.tabCallback(url, this);
         }
 
         // 切换 iframe
@@ -98,7 +100,7 @@
           $("#tab_" + index).trigger("click");
         } else {
           // 创建 tab
-          var tab = "<li class='tabs-item active' id='tab_"+index+"' data-close='true'><a href='javascript:;' class='waves-effect waves-light'>"+tabName+"</a></li>";
+          var tab = "<li class='tabs-item active' id='tab_"+index+"' data-close='true' data-index='"+ index +"' data-url='"+ url +"'><a href='javascript:;' class='waves-effect waves-light'>"+tabName+"</a></li>";
           $("#tabs").append(tab);
 
           // 创建 iframe
