@@ -58,13 +58,13 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/waves-0.7.5/waves.min.js"></script>
 <script src="js/BootstrapMenu/BootstrapMenu.min.js"></script>
-<!-- <script src="js/main.js"></script> -->
 <script src="js//jquery-tab.js"></script>
 <script>
     $(function() {
       $("#tab-container").tab({
-        homeUrl: "home.html",
-        homeName: "菜单一"
+        homeUrl: "home.html", // 首页地址
+        homeName: "菜单一",  // tab 栏标题名
+        tabCallback: null          // 点击 tab 后的回调函数
       });
     });
 </script>
