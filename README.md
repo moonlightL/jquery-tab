@@ -6,7 +6,7 @@ jquery-tab 是一款列表页面标签 tab 插件。
 
 ## 二、教程
 
-### 1.引入资源文件
+### 2.1 引入资源文件
 
 ```
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,7 +20,8 @@ jquery-tab 是一款列表页面标签 tab 插件。
 <script src="js//jquery-tab.js"></script>
 ```
 
-### 2.页面布局
+### 2.2 页面布局
+总体上需要 2 部分：导航菜单和子窗口容器。
 
 ```
 <div class="row">
@@ -43,15 +44,16 @@ jquery-tab 是一款列表页面标签 tab 插件。
   </div>
 </div>
 ```
-在 a 标签中使用自定义属性 data-url 配置页面 url。
+注意：
+  1. ul 元素负责包裹导航菜单，同时在子孙元素 a 标签中使用自定义属性 data-url 配置页面 url。
+  2. tab-container 是子窗口容器 id 值。
 
-tab-container 是子窗口容器 id 值。
-
-### 3.插件使用
+### 2.3 调用插件
 
 ```
 <script>
     $(function() {
+      // 设置默认子窗口页面
       $("#tab-container").tab({
         homeUrl: "home.html",
         homeName: "菜单一"
